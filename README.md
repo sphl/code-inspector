@@ -63,7 +63,6 @@ When `--icfg` is used, the JSON output includes an additional `iCFG` array where
 ```json
 {
     "functions": [
-        ...,
         {
             "name": "quickSort",
             "location": {
