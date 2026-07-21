@@ -50,7 +50,7 @@ Include the iCFG in the output:
 
 When `--icfg` is used, the JSON output includes an additional `iCFG` array where each entry maps a source BB ID (`src`) to a list of successor BB IDs (`dst`).
 
-> **Note:** The `LoC` field in the output counts the number of source lines spanned by each function or BB.
+> **Note:** The `LoC` field in the output counts the number of source lines spanned by each function or BB. Moreover, the `reachable_from_main` field indicates whether the function is reachable from the program's `main` function via the call graph.
 
 ### Example Output
 
