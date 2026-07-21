@@ -1,0 +1,29 @@
+{
+    "name": "code-inspector",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    // Make SVF_DIR available as a CMake variable via the environment.
+    // LLVM_DIR is set via cmake.configureArgs below so that it points to the cmake config directory (not the LLVM
+    // install prefix).
+    "containerEnv": {
+        "SVF_DIR": "/opt/svf-2.2"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack"
+            ],
+            "settings": {
+                "cmake.configureArgs": [
+                    "-DLLVM_DIR=/usr/lib/llvm-12/lib/cmake/llvm",
+                    "-DSVF_DIR=/opt/svf-2.2"
+                ],
+                "cmake.buildDirectory": "${workspaceFolder}/build"
+            }
+        }
+    }
+}
